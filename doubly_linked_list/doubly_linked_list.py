@@ -54,9 +54,11 @@ class DoublyLinkedList:
             self.head = new_node
             self.tail = new_node
         else:
-            new_node.next = self.head
-            self.head.prev = new_node
-            self.head = new_node
+            self.head.insert_before(value)
+            # self.head.prev = new_node
+            # new_node.next = self.head
+            # self.head = new_node
+            # self.head.prev = None
 
     """Removes the List's current head node, making the
     current head's next node the new head of the List.
@@ -76,8 +78,9 @@ class DoublyLinkedList:
             self.head = new_node
             self.tail = new_node
         else:
+            # self.tail.insert_after(value)
             new_node.prev = self.tail
-            self.head.next = new_node
+            self.tail.next = new_node
             self.tail = new_node
 
     """Removes the List's current tail node, making the
@@ -123,6 +126,7 @@ class DoublyLinkedList:
             node.delete()
         # If this is in the middle
         else:
+            node.prev = node.next
             node.delete()
 
 
@@ -131,13 +135,13 @@ class DoublyLinkedList:
         # How to get max
         # create max var
         current = self.head
-        max = self.head.value
+        max_value = None
         # loop through nodes#
         while (current is not None):
         # compare value in node to max found
-            if current.value > max:
-                max = current.value
+            if max_value is None or current.value > max_value:
+                max_value = current.value
             current = current.next
-        return value
+        return max_value
 
 
