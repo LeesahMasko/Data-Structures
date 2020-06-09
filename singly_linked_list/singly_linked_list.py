@@ -148,4 +148,5 @@ class LinkedList:
                 max_so_far = current.get_value()
 ​
             current = current.get_next()
-​
+​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​
+        return max_so_far
