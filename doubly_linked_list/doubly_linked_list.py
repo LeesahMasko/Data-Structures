@@ -47,7 +47,7 @@ class DoublyLinkedList:
     """Wraps the given value in a ListNode and inserts it
     as the new head of the list. Don't forget to handle
     the old head node's previous pointer accordingly."""
-    def add_to_head(self, value):  # Started here with
+    def add_to_head(self, value):  # Started here!
         new_node = ListNode(value)
         self.length += 1
         if not self.head and not self.tail:
@@ -63,7 +63,7 @@ class DoublyLinkedList:
     """Removes the List's current head node, making the
     current head's next node the new head of the List.
     Returns the value of the removed Node."""
-    def remove_from_head(self):
+    def remove_from_head(self):  # Did this one 3rd after completing 'delete'
         value = self.head.value
         self.delete(self.head)
         return value
@@ -86,7 +86,7 @@ class DoublyLinkedList:
     """Removes the List's current tail node, making the
     current tail's previous node the new tail of the List.
     Returns the value of the removed Node."""
-    def remove_from_tail(self):
+    def remove_from_tail(self):  # Did this one 4th after remove from head
         value = self.tail.value
         self.delete(self.tail)
         return value
@@ -94,7 +94,7 @@ class DoublyLinkedList:
 
     """Removes the input node from its current spot in the
     List and inserts it as the new head node of the List."""
-    def move_to_front(self, node):
+    def move_to_front(self, node): # Did this one 5th
         if node is self.head:
             return
         self.add_to_head(node.value)
@@ -102,7 +102,7 @@ class DoublyLinkedList:
 
     """Removes the input node from its current spot in the
     List and inserts it as the new tail node of the List."""
-    def move_to_end(self, node):
+    def move_to_end(self, node):  # Did this one 6th
         if node is self.tail:
             return
         self.add_to_tail(node.value)
@@ -110,7 +110,7 @@ class DoublyLinkedList:
 
     """Removes a node from the list and handles cases where
     the node was the head or the tail"""
-    def delete(self, node):
+    def delete(self, node):   # MOVED to this step next
         self.length -= 1
         # If this is the only node
         if self.head is self.tail:
@@ -131,7 +131,7 @@ class DoublyLinkedList:
 
 
     """Returns the highest value currently in the list"""
-    def get_max(self):
+    def get_max(self):  # did this one last
         # How to get max
         # create max var
         current = self.head
